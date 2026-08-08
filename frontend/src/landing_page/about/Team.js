@@ -8,7 +8,7 @@ function Team() {
 
       <div className="row between p-3 mt-5  text-muted" style={{lineHeight:"1.8em"}}>
         <div className="col-6 p-5 text-center" >
-         <img src="/images-20260604T070444Z-3-001/images/priyanshuPathak.jpg" alt="..." style={{ borderRadius: "90%", width:"60%", height:"auto"}} />
+         <img src="/images/priyanshuPathak.jpg" alt="..." style={{ borderRadius: "90%", width:"60%", height:"auto"}} />
          <h5 className="mt-3">Priyanshu Pathak</h5>
          <h6 className="text-muted">Founder & CEO</h6>
         </div>

@@ -15,9 +15,9 @@ function LeftSection({imageURL, productName, productDescription, tryDemo, learnM
                         <a href={learnMore} style={{marginLeft:"50px", textDecoration:"none"}} > Learn More <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
                     </div>
                     <div className="mt-3">
-                        <a href={googlePlayLink} className="btn btn-google-play"><img src="/images-20260604T070444Z-3-001\Images\googlePlayBadge.svg" alt="Google Play" /></a>
+                        <a href={googlePlayLink} className="btn btn-google-play"><img src="\Images\googlePlayBadge.svg" alt="Google Play" /></a>
 
-                        <a href={appStoreLink} style={{marginLeft:"5px"}} className="btn btn-app-store"><img src="/images-20260604T070444Z-3-001\Images\appstoreBadge.svg" alt="App Store" /></a>
+                        <a href={appStoreLink} style={{marginLeft:"5px"}} className="btn btn-app-store"><img src="\Images\appstoreBadge.svg" alt="App Store" /></a>
                     </div>
                 </div>
             </div>

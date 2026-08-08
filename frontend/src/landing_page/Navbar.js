@@ -5,7 +5,7 @@ function Navbar() {
     <nav class="navbar navbar-expand-lg border-bottom">
       <div class="container p-2">
         <Link class="navbar-brand" to="/">
-          <img src="images-20260604T070444Z-3-001\images\logo.svg" style={{width:"20%"}} alt="Zerodha-logo" />
+          <img src="\images\logo.svg" style={{width:"20%"}} alt="Zerodha-logo" />
         </Link >
         <button
           class="navbar-toggler"
