@@ -13,27 +13,27 @@ function Universe() {
                 </div>
 
                 <div className="col-4 p-3 mt-5">
-                    <img src="\Images\smallcaseLogo.png" alt="Smallcase Logo" className="universe-logo" />
+                    <img src="/Images/smallcaseLogo.png" alt="Smallcase Logo" className="universe-logo" />
                     <p className="small text-muted">Thematic investment platform</p>
                 </div>
                 <div className="col-4 p-3 mt-5">
-                    <img src="\Images\streakLogo.png" alt="Streak Logo" className="universe-logo" />
+                    <img src="/Images/streakLogo.png" alt="Streak Logo" className="universe-logo" />
                     <p className="small text-muted">Algo & strategy platform</p>
                 </div>
                 <div className="col-4 p-3 mt-5">
-                    <img src="\Images\sensibullLogo.svg" alt="Sensibull Logo" className="universe-logo" />
+                    <img src="/Images/sensibullLogo.svg" alt="Sensibull Logo" className="universe-logo" />
                     <p className="small text-muted">Options trading platform</p>
                 </div>
                 <div className="col-4 p-3 mt-5">
-                    <img src="\Images\zerodhaFundhouse.png" alt="Zerodha Fund House Logo" className="universe-logo" />
+                    <img src="/Images/zerodhaFundhouse.png" alt="Zerodha Fund House Logo" className="universe-logo" />
                     <p className="small text-muted">Asset management</p>
                 </div>
                 <div className="col-4 p-3 mt-5">
-                    <img src="\Images\goldenpiLogo.png" alt="GoldenPi Logo" className="universe-logo" />
+                    <img src="/Images/goldenpiLogo.png" alt="GoldenPi Logo" className="universe-logo" />
                     <p className="small text-muted">Bonds trading platform</p>
                 </div>
                 <div className="col-4 p-3 mt-5">
-                    <img src="\Images\dittoLogo.png" alt="Ditto Logo" className="universe-logo" />
+                    <img src="/Images/dittoLogo.png" alt="Ditto Logo" className="universe-logo" />
                     <p className="small text-muted">Insurance</p>
                 </div>
 
