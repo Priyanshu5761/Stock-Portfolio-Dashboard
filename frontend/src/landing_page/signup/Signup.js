@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-const DASHBOARD_URL = "http://localhost:3000";
+const DASHBOARD_URL = process.env.REACT_APP_DASHBOARD_URL;
 
 function Signup() {
   const [form, setForm] = useState({ email: "", username: "", password: "" });
@@ -20,7 +20,7 @@ function Signup() {
 
     try {
       const res = await axios.post(
-        "http://localhost:3002/signup",
+        `${process.env.REACT_APP_API_URL}/signup`,
         form,
         { withCredentials: true }
       );
