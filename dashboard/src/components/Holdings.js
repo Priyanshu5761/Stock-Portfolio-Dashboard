@@ -7,9 +7,11 @@ const Holdings = () => {
   const [allHoldings, setAllHoldings] = useState([]);
 
   useEffect(() => {
-    axios.get(`${process.env.REACT_APP_API_URL}/allHoldings`).then((res) => {
-      setAllHoldings(res.data);
-    });
+    axios
+      .get(`${process.env.REACT_APP_API_URL}/allHoldings`, { withCredentials: true })
+      .then((res) => {
+        setAllHoldings(res.data);
+      });
   }, []);
 
   const labels = allHoldings.map((subArray) => subArray["name"]);

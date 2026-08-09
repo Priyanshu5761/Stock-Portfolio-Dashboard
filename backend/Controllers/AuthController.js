@@ -2,6 +2,13 @@ const User = require("../model/UserModel");
 const { createSecretToken } = require("../util/SecretToken");
 const bcrypt = require("bcryptjs");
 
+const COOKIE_OPTIONS = {
+  httpOnly: true,
+  secure: true,       // required so the browser sends the cookie over HTTPS cross-site
+  sameSite: "none",   // required for cross-domain cookies (Amplify -> Render)
+  maxAge: 1000 * 60 * 60 * 24, // 1 day
+};
+
 module.exports.Signup = async (req, res, next) => {
   try {
     const { email, password, username, createdAt } = req.body;
@@ -10,13 +17,10 @@ module.exports.Signup = async (req, res, next) => {
       return res.json({ message: "User already exists" });
     }
 
-    const user = await User.create({ email, password , username, createdAt });
+    const user = await User.create({ email, password, username, createdAt });
 
     const token = createSecretToken(user._id);
-    res.cookie("token", token, {
-      httpOnly: true,
-      maxAge: 1000 * 60 * 60 * 24, // 1 day
-    });
+    res.cookie("token", token, COOKIE_OPTIONS);
     res
       .status(201)
       .json({ message: "User signed in successfully", success: true, user: { _id: user._id, email: user.email, username: user.username }, });
@@ -26,6 +30,7 @@ module.exports.Signup = async (req, res, next) => {
     res.status(500).json({ message: "Signup failed" });
   }
 };
+
 module.exports.Login = async (req, res, next) => {
   try {
     const { email, password } = req.body;
@@ -44,10 +49,7 @@ module.exports.Login = async (req, res, next) => {
     }
 
     const token = createSecretToken(user._id);
-    res.cookie("token", token, {
-      httpOnly: true,
-      maxAge: 1000 * 60 * 60 * 24,
-    });
+    res.cookie("token", token, COOKIE_OPTIONS);
 
     res.status(200).json({
       message: "User logged in successfully",
@@ -61,6 +63,10 @@ module.exports.Login = async (req, res, next) => {
 };
 
 module.exports.Logout = (req, res) => {
-  res.clearCookie("token");
+  res.clearCookie("token", {
+    httpOnly: true,
+    secure: true,
+    sameSite: "none",
+  });
   res.status(200).json({ message: "Logged out successfully" });
 };
