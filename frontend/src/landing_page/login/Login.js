@@ -19,11 +19,13 @@ function Login() {
     setLoading(true);
 
     try {
-      await axios.post(
+      const res = await axios.post(
         `${process.env.REACT_APP_API_URL}/login`,
-        form,
-        { withCredentials: true }
+        form
       );
+
+      // Store the token so we can send it on future requests via Authorization header.
+      localStorage.setItem("token", res.data.token);
 
       window.location.href = DASHBOARD_URL;
     } catch (err) {

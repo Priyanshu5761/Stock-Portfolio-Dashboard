@@ -8,7 +8,6 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const app = express();
 const bodyParser = require('body-parser');
-const cookieParser = require("cookie-parser");
 const { verifyToken } = require("./Middlewares/AuthMiddleware");
 
 
@@ -29,11 +28,8 @@ app.use(cors({
                 "https://main.dzjt2ik5hywct.amplifyapp.com"
             ],
             methods: ["GET", "POST", "PUT", "DELETE"],
-            credentials: true,
-
 }));
 
-app.use(cookieParser());
 app.use(bodyParser.json());
 
 app.use('/', authRoute);

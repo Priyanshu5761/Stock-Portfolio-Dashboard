@@ -21,8 +21,7 @@ function Signup() {
     try {
       const res = await axios.post(
         `${process.env.REACT_APP_API_URL}/signup`,
-        form,
-        { withCredentials: true }
+        form
       );
 
       if (res.data.message === "User already exists") {
@@ -30,6 +29,8 @@ function Signup() {
         setLoading(false);
         return;
       }
+
+      localStorage.setItem("token", res.data.token);
 
       window.location.href = DASHBOARD_URL;
     } catch (err) {

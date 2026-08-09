@@ -7,8 +7,11 @@ const Holdings = () => {
   const [allHoldings, setAllHoldings] = useState([]);
 
   useEffect(() => {
+    const token = localStorage.getItem("token");
     axios
-      .get(`${process.env.REACT_APP_API_URL}/allHoldings`, { withCredentials: true })
+      .get(`${process.env.REACT_APP_API_URL}/allHoldings`, {
+        headers: { Authorization: `Bearer ${token}` },
+      })
       .then((res) => {
         setAllHoldings(res.data);
       });
